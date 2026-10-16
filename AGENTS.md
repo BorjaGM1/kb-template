@@ -20,7 +20,7 @@ Do not cross-link between vaults with wikilinks (they are separate Obsidian vaul
 
 ## Obsidian style
 - **Small atomic notes**: one idea, person, project, decision or source per note.
-- **Language**: note content in English (quote sources in their original language when needed).
+- **Language**: English (change to yours). Write note content in this language; quote sources in their original language when needed.
 - **Links**: `[[Note title]]` / `[[Note title|alias]]` wikilinks, never Markdown links between notes. Every note links to at least one other note or MOC.
 - **Tags**: lowercase, kebab-case, few, e.g. `#person`, `#project`, `#decision`, `#source`, `#idea`. Nested allowed (`#project/web`).
 - **MOCs**: each vault has `Home.md` as the root MOC. Add topic MOCs (`MOC - Topic.md`) only when a topic has ~5+ notes. Keep MOCs short lists of links with one-line context.

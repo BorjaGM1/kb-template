@@ -19,10 +19,10 @@ Notes are markdown files. You read them in Obsidian. Any agent (Claude, Codex, C
 
 `python3 scripts/lint.py` checks broken links and orphan notes.
 
-## Git in 3 words
+## Git in 3 commands
 
 - commit: save a point with a note of what changed (local).
 - push: upload your commits to GitHub.
 - pull: download the latest from GitHub (e.g. what your agent did).
 
-On Windows, symlinks need `git config core.symlinks true` (and Developer Mode) before cloning.
+On Windows, symlinks need Developer Mode (or an admin shell) plus `git clone -c core.symlinks=true <url>`, or set it once with `git config --global core.symlinks true` before cloning.

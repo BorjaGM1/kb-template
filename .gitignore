@@ -1,5 +1,5 @@
-.obsidian/workspace*.json
-.obsidian/cache
-.trash/
+**/.obsidian/workspace*.json
+**/.obsidian/cache
+**/.trash/
 .DS_Store
 __pycache__/

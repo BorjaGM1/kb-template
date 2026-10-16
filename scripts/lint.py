@@ -15,6 +15,7 @@ EXEMPT_ORPHAN = {"home"}
 
 
 def aliases(text):
+    text = text.replace("\r\n", "\n")
     m = re.match(r"---\n(.*?)\n---", text, re.S)
     if not m:
         return []
@@ -29,7 +30,7 @@ def aliases(text):
 
 
 def lint(vault: Path):
-    notes = [p for p in vault.rglob("*.md") if ".obsidian" not in p.parts]
+    notes = [p for p in vault.rglob("*.md") if ".obsidian" not in p.parts and ".trash" not in p.parts]
     files = {p.relative_to(vault).as_posix().lower() for p in vault.rglob("*") if p.is_file()}
     names = {}
     for p in notes:
@@ -52,7 +53,8 @@ def lint(vault: Path):
             elif dest is not None and dest != p:
                 inbound[dest] += 1
     orphans = [p.relative_to(vault) for p, n in inbound.items()
-               if n == 0 and p.stem.lower() not in EXEMPT_ORPHAN]
+               if n == 0 and p.stem.lower() not in EXEMPT_ORPHAN
+               and "Inbox" not in p.relative_to(vault).parts]
     return broken, sorted(orphans)
 
 
